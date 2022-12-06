@@ -29,7 +29,7 @@ def attach_csv_file(data, msg):
                 csv_read.read(),
                 Name = csv_file_name
             )
-            printf(csv_read())
+            print(csv_read())
         part["Content-Disposition"] = 'attachment; filename="%s"' % csv_file_name
         msg.attach(part)
 
@@ -45,7 +45,7 @@ def sendEmail(sender, recipient, subject, text):
     msg.attach(part)
     server.sendmail(sender, recipient, msg.as_string())
     server.quit()
-    printf(text)
+    print(text)
 
 sendEmail(sender, recipient, subject, text)
 
